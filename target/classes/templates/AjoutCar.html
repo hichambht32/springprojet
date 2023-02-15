@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<body>
+	<section>
+		<div class="row g-0">
+			<div class="col md-6 no-gutters">
+				<div style="height: 60vh; width: 90%;"
+					class="vet d-flex justify-content-center align-items-center">
+					<img
+						src="https://media.istockphoto.com/id/1447712553/photo/check-the-transmission-fluid-level-and-gear-oil-deterioration-by-a-mechanic-with-transparent.jpg?b=1&s=170667a&w=0&k=20&c=7GTKaAyGadr3NahQJmCplKzEF0wFKvptz1U0Jhm4fR8="
+						width="500px" />
+				</div>
+			</div>
+			<div class="col md-6 no-gutters"
+				style="font-family: 'Times New Roman'; margin-top: 20px;">
+				<p class="text d-flex justify-content-center align-items-center"
+					style="font-size: 35px; color: rgb(255, 128, 0)">
+				</p>
+				<div class="card-body">
+					<form th:action="@{/AjoutCarProcess}" th:object="${car}"
+						method="post">
+
+						<div class="mb-3 text-white font-weight-bold">
+							<label>Carrosserie :</label> <select th:field="*{carrosserie}"
+								name="carrosserie" id="carrosserie"
+								class="btn btn-warning dropdown-toggle">
+								<option value="SUV">SUV</option>
+								<option value="Citadine">Citadine</option>
+								<option value="Hatchback">Hatchback</option>
+							</select>
+						</div>
+
+						<div class="mb-3 text-white font-weight-bold">
+							<label>Motorisation :</label> <input type="text"
+								name="motorisation" th:field="*{motorisation}"
+								class="form-control">
+						</div>
+						<div class="mb-3 text-white font-weight-bold">
+							<label>Modéle :</label> <select name="modele"
+								th:field="*{modele}" id="modele"
+								class="btn btn-warning dropdown-toggle">
+								<option value="2015">2015</option>
+								<option value="2016">2016</option>
+								<option value="2017">2017</option>
+								<option value="2018">2018</option>
+								<option value="2019">2019</option>
+								<option value="2020">2020</option>
+								<option value="2021">2021</option>
+								<option value="2022">2022</option>
+								<option value="2023">2023</option>
+							</select>
+						</div>
+						<div class="mb-3 text-white font-weight-bold">
+							<label>Marque :</label> <select name="marque"
+								th:field="*{marque}" id="marque"
+								class="btn btn-warning dropdown-toggle">
+								<option value="Ford">Ford</option>
+								<option value="Dacia">Dacia</option>
+								<option value="Hyundai">Hyundai</option>
+							</select>
+						</div>
+						<input type="hidden" id="idUser" name="idUser"
+							th:value="${user.getUser().idUser}" />
+						<button class="btn btn-primary col-md-12 bg-warning">Enregistrer</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<footer class="">
+			<div class="bg-warning" style="margin-top: 170px; width: 100%">
+				<!-- Grid row -->
+				<div class="row mt-1">
+					<!-- Grid column -->
+					<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-1 text-light">
+						<!-- Content -->
+						<h6 class="text-uppercase fw-bold mb-3 text-light  mt-2">
+							<i class="text-uppercase fw-bold mb-1 text-light"></i>E-Tomobil
+						</h6>
+						<p>votre magazin de</p>
+						<p>pieces de rechanges</p>
+						<p>et d'accessoirs enligne</p>
+
+
+					</div>
+					<!-- Grid column -->
+					<!-- Grid column -->
+					<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-1 text-light">
+						<!-- Links -->
+						<h6 class="text-uppercase fw-bold mb-3 text-light mt-2">Social
+							Media</h6>
+						<p>
+							<a href="#!" class="text-reset">Instagram</a>
+						</p>
+						<p>
+							<a href="#!" class="text-reset">Facebook</a>
+						</p>
+						<p>
+							<a href="#!" class="text-reset">Tiktok</a>
+						</p>
+					</div>
+					<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-1 text-light"
+						style="">
+						<!-- Links -->
+						<h6 class="text-uppercase fw-bold mb-3 text-light mt-2">Packs</h6>
+						<p>
+							<a href="#!" class="text-reset">Premium</a>
+						</p>
+						<p>
+							<a href="#!" class="text-reset">Elite</a>
+						</p>
+						<p>
+							<a href="#!" class="text-reset">Ultimate</a>
+						</p>
+					</div>
+					<div
+						class="col-md-4 col-lg-3 col-xl-2 mx-auto mb-md-0 mb-1 text-light">
+						<!-- Links -->
+						<h6 class="text-uppercase fw-bold mb-3 mt-2 text-light">Contact</h6>
+						<p>
+							<i class="text-reset"></i>Bd Palestin, Mohammedia
+						</p>
+						<p>
+							<i class="text-reset"></i> help@E-Tomobil.ma
+						</p>
+						<p>
+							<i class="text-reset"></i> + 212 693937904
+						</p>
+					</div>
+					<!-- Grid column -->
+				</div>
+				<!-- Grid row -->
+			</div>
+		</footer>
+	</section>
+	<!-- Footer -->
+</body>
+</html>
